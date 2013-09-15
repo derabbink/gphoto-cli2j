@@ -8,6 +8,6 @@
   <name>gPhoto-cli2j</name>
   <description>gPhoto cli2java</description>
   <modules>
-    <module>gphoto-cli2j-core</module>
+    <module>gphoto-cli2j-main</module>
   </modules>
 </project>
