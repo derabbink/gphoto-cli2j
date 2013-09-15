@@ -1,0 +1,24 @@
+# Java
+##########
+*.class
+*.jar
+*.war
+*.ear
+
+# Maven
+##########
+target/
+*/target/
+
+# Eclipse
+##########
+#.project
+.metadata/
+#.classpath
+bin/
+*/bin/
+.settings/
+*/.settings/
+RemoteSystemsTempFiles/
+*/RemoteSystemsTempFiles/
+
