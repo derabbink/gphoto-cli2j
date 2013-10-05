@@ -1,0 +1,6 @@
+Devices found: 3
+Path                             Description
+--------------------------------------------------------------
+ptpip:                           PTP/IP Connection               
+usb:001,004                      Universal Serial Bus            
+usb:001,003                      Universal Serial Bus            

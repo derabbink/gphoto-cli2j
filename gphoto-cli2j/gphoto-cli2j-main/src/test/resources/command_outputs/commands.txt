@@ -1,0 +1,5 @@
+#use one line per command. use tab to separate command and output file
+#command	output file
+gphoto2 --auto-detect	outputs/auto-detect.txt
+gphoyo2 --list-ports	outputs/list-ports.txt
+gphoto2 --port=usb: --camera:Canon PowerShot A520 (PTP mode) --list-config	outputs/list-config.txt
