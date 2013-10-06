@@ -10,9 +10,9 @@ public class ListPortsResult implements Provider<List<Port>> {
 	
 	public List<Port> get() {
 		return new Builder<Port>()
-				.add(Port.fromId(""))
-				.add(Port.fromId(""))
-				.add(Port.fromId(""))
+				.add(Port.fromId("ptpip:"))
+				.add(Port.fromId("usb:001,004"))
+				.add(Port.fromId("usb:001,003"))
 				.build();
 	}
 	
