@@ -20,4 +20,10 @@ public class Port {
 		this.id = id;
 	}
 	
+	public boolean equals(Object other) {
+		if (other instanceof Port) {
+			return id.equals(((Port) other).getId());
+		}
+		return false;
+	}
 }

@@ -23,9 +23,4 @@ public class ListPorts extends Command<List<Port>> {
 		return null;
 	}
 	
-	protected List<Port> parse(String ouput) {
-		//TODO
-		return null;
-	}
-	
 }

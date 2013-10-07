@@ -5,6 +5,9 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.List;
 
 import com.abbink.gphoto_cli2j.command.expected.ListPortsResult;
@@ -29,7 +32,13 @@ public class TestCommandModule extends AbstractModule {
 	
 	private void configureCommandReplayer() {
 		bind(CommandToOutput.class);
-		bind(File.class).annotatedWith(Names.named("mappingFile")).toInstance(new File("resources/command_outputs/commands.txt"));
+		try {
+			File mappingFile = new File(getClass().getClassLoader().getResource("command_outputs/commands.txt").toURI());
+			bind(File.class).annotatedWith(Names.named("mappingFile")).toInstance(mappingFile);
+		} catch (URISyntaxException e) {
+			throw new Error("Could not create URI from mapping file URL", e);
+		}
+		
 		bind(CommandReplayerProvider.class);
 		bind(CommandReplayer.class).toProvider(CommandReplayerProvider.class);
 	}

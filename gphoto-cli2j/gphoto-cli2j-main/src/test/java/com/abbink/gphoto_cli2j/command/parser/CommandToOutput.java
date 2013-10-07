@@ -17,7 +17,7 @@ public class CommandToOutput extends Parser<Map<String, String>> {
 	 * two patterns (.*) separated by \t
 	 * first pattern must not begin with a #
 	 */
-	public static Pattern linePattern = Pattern.compile("^((?!#).*)\\t(.*)$");
+	public static final Pattern linePattern = Pattern.compile("^((?!#).*)\\t(.*)$");
 	
 	@Override
 	public Map<String, String> parse(String raw) {
