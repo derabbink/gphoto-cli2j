@@ -2,4 +2,4 @@
 #command	output file
 gphoto2 --auto-detect	outputs/auto-detect.txt
 gphoto2 --list-ports	outputs/list-ports.txt
-gphoto2 --port=usb: --camera:Canon PowerShot A520 (PTP mode) --list-config	outputs/list-config.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --list-config	outputs/list-config.txt

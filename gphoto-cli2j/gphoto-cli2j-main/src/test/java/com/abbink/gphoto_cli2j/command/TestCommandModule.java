@@ -8,11 +8,12 @@ import java.lang.annotation.Target;
 import java.net.URISyntaxException;
 import java.util.List;
 
+import com.abbink.gphoto_cli2j.command.expected.ListConfigResult;
 import com.abbink.gphoto_cli2j.command.expected.ListPortsResult;
 import com.abbink.gphoto_cli2j.command.parser.CommandToOutput;
+import com.abbink.gphoto_cli2j.command.result.Config;
 import com.abbink.gphoto_cli2j.command.result.Port;
 import com.abbink.gphoto_cli2j.command.testimpl.CommandReplayer;
-import com.abbink.gphoto_cli2j.command.testimpl.ListPorts;
 import com.google.guiceberry.GuiceBerryModule;
 import com.google.inject.AbstractModule;
 import com.google.inject.BindingAnnotation;
@@ -44,11 +45,13 @@ public class TestCommandModule extends AbstractModule {
 	}
 	
 	private void configureTestCommands() {
-		bind(ListPorts.class).to(com.abbink.gphoto_cli2j.command.testimpl.ListPorts.class);
+		bind(com.abbink.gphoto_cli2j.command.ListPorts.class).to(com.abbink.gphoto_cli2j.command.testimpl.ListPorts.class);
+		bind(com.abbink.gphoto_cli2j.command.ListConfig.class).to(com.abbink.gphoto_cli2j.command.testimpl.ListConfig.class);
 	}
 	
 	private void configureExpectedResults() {
 		bind(new TypeLiteral<List<Port>>() {}).annotatedWith(ExpectedResult.class).toProvider(ListPortsResult.class);
+		bind(new TypeLiteral<List<Config>>() {}).annotatedWith(ExpectedResult.class).toProvider(ListConfigResult.class);
 	}
 	
 	@Retention(RetentionPolicy.RUNTIME)
