@@ -5,14 +5,14 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.List;
 
 import com.abbink.gphoto_cli2j.command.expected.ListPortsResult;
 import com.abbink.gphoto_cli2j.command.parser.CommandToOutput;
 import com.abbink.gphoto_cli2j.command.result.Port;
+import com.abbink.gphoto_cli2j.command.testimpl.CommandReplayer;
+import com.abbink.gphoto_cli2j.command.testimpl.ListPorts;
 import com.google.guiceberry.GuiceBerryModule;
 import com.google.inject.AbstractModule;
 import com.google.inject.BindingAnnotation;
@@ -44,7 +44,7 @@ public class TestCommandModule extends AbstractModule {
 	}
 	
 	private void configureTestCommands() {
-		bind(ListPorts.class).to(TestListPorts.class);
+		bind(ListPorts.class).to(com.abbink.gphoto_cli2j.command.testimpl.ListPorts.class);
 	}
 	
 	private void configureExpectedResults() {

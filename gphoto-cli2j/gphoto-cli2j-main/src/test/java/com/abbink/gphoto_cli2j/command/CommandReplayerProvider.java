@@ -3,6 +3,7 @@ package com.abbink.gphoto_cli2j.command;
 import java.io.File;
 
 import com.abbink.gphoto_cli2j.command.parser.CommandToOutput;
+import com.abbink.gphoto_cli2j.command.testimpl.CommandReplayer;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 import com.google.inject.name.Named;

@@ -1,4 +1,4 @@
-package com.abbink.gphoto_cli2j.command;
+package com.abbink.gphoto_cli2j.command.testimpl;
 
 import java.io.File;
 import java.io.FileNotFoundException;

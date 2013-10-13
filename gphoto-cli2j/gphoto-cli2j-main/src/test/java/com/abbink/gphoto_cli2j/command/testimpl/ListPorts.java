@@ -1,19 +1,19 @@
-package com.abbink.gphoto_cli2j.command;
+package com.abbink.gphoto_cli2j.command.testimpl;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 
 /**
- * Test implementation of {@link ListPorts}
+ * Test implementation of {@link com.abbink.gphoto_cli2j.command.ListPorts}
  * Replays output using {@link CommandReplayer}
  */
 @Singleton
-public class TestListPorts extends ListPorts {
+public class ListPorts extends com.abbink.gphoto_cli2j.command.ListPorts {
 	
 	private CommandReplayer replayer;
 	
 	@Inject
-	public TestListPorts(com.abbink.gphoto_cli2j.command.parser.ListPorts parser, CommandReplayer replayer) {
+	public ListPorts(com.abbink.gphoto_cli2j.command.parser.ListPorts parser, CommandReplayer replayer) {
 		super(parser);
 		this.replayer = replayer;
 	}
