@@ -1,0 +1,3 @@
+Label: PTP Property 0xd04b
+Type: TEXT
+Current: 0

@@ -1,0 +1,3 @@
+Label: Size of Output Data from Camera
+Type: TEXT
+Current: 20480

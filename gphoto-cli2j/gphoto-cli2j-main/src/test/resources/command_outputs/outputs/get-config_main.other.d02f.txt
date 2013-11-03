@@ -1,0 +1,3 @@
+Label: Size of Input Data to Camera
+Type: TEXT
+Current: 5120
