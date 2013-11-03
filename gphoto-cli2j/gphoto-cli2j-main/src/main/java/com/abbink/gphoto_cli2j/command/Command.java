@@ -1,5 +1,7 @@
 package com.abbink.gphoto_cli2j.command;
 
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
 import com.abbink.gphoto_cli2j.command.parser.Parser;
 
 /**
@@ -18,7 +20,7 @@ public abstract class Command<T> {
 		this.parser = parser;
 	}
 	
-	protected Parser<T> getPartser() {
+	protected Parser<T> getParser() {
 		return parser;
 	}
 	
@@ -28,7 +30,7 @@ public abstract class Command<T> {
 	 */
 	public T run() {
 		String ouput = execute();
-		return parser.parse(ouput);
+		return getParser().parse(ouput);
 	}
 	
 	/**
@@ -41,5 +43,7 @@ public abstract class Command<T> {
 	 * executes the cli command and collects the output
 	 * @return command's output
 	 */
-	protected abstract String execute();
+	protected String execute() {
+		throw new NotImplementedException();
+	}
 }

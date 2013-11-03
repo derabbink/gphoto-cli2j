@@ -50,8 +50,9 @@ public class ListPorts extends Parser<List<Port>> {
 			}
 			i++;
 		}
-		
 		scanner.close();
+		
+		//TODO check result against portsFound
 		return result;
 	}
 	
