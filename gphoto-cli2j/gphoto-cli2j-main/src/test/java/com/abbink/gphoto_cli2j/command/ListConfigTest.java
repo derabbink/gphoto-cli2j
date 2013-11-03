@@ -10,6 +10,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 import com.abbink.gphoto_cli2j.command.TestCommandModule.ExpectedResult;
+import com.abbink.gphoto_cli2j.command.arguments.CameraId;
 import com.abbink.gphoto_cli2j.command.result.Config;
 import com.google.guiceberry.junit4.GuiceBerryRule;
 import com.google.inject.Inject;
@@ -27,12 +28,15 @@ public class ListConfigTest {
 	private ListConfig command;
 	
 	@Inject
+	private CameraId args;
+	
+	@Inject
 	@ExpectedResult
 	private List<Config> expected;
 	
 	@Test
 	public void successfulCommand() {
-		List<Config> actual  = command.run();
+		List<Config> actual  = command.run(args);
 		assertEquals(expected, actual);
 	}
 	

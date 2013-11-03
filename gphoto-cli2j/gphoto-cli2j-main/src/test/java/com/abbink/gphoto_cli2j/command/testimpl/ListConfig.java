@@ -1,5 +1,6 @@
 package com.abbink.gphoto_cli2j.command.testimpl;
 
+import com.abbink.gphoto_cli2j.command.arguments.CameraId;
 import com.google.inject.Inject;
 
 public class ListConfig extends com.abbink.gphoto_cli2j.command.ListConfig {
@@ -13,8 +14,8 @@ public class ListConfig extends com.abbink.gphoto_cli2j.command.ListConfig {
 	}
 	
 	@Override
-	protected String execute() {
-		return replayer.replay(getCommand());
+	protected String execute(CameraId args) {
+		return replayer.replay(getCommand(args));
 	}
 	
 }

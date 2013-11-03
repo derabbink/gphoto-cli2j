@@ -8,6 +8,7 @@ import java.lang.annotation.Target;
 import java.net.URISyntaxException;
 import java.util.List;
 
+import com.abbink.gphoto_cli2j.command.arguments.CameraId;
 import com.abbink.gphoto_cli2j.command.expected.ListConfigResult;
 import com.abbink.gphoto_cli2j.command.expected.ListPortsResult;
 import com.abbink.gphoto_cli2j.command.parser.CommandToOutput;
@@ -45,8 +46,13 @@ public class TestCommandModule extends AbstractModule {
 	}
 	
 	private void configureTestCommands() {
+		//ListPorts
 		bind(com.abbink.gphoto_cli2j.command.ListPorts.class).to(com.abbink.gphoto_cli2j.command.testimpl.ListPorts.class);
+		
+		//ListConfig
 		bind(com.abbink.gphoto_cli2j.command.ListConfig.class).to(com.abbink.gphoto_cli2j.command.testimpl.ListConfig.class);
+		CameraId cameraId = new CameraId("usb:001,004", "Canon PowerShot A520 (PTP mode)");
+		bind(CameraId.class).toInstance(cameraId);
 	}
 	
 	private void configureExpectedResults() {

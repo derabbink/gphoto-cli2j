@@ -37,6 +37,23 @@ public abstract class CommandWithArgs<TArgs, TResult> extends Command<TResult> {
 	
 	/**
 	 * Does not do anything
+	 * @deprecated Use {@link #getCommand(TArgs)}
+	 * @return null
+	 */
+	@Deprecated
+	public String getCommand() {
+		return null;
+	}
+	
+	/**
+	 * return the cli command for this Command object
+	 * @param args Arguments required to build the complete command
+	 * @return
+	 */
+	public abstract String getCommand(TArgs args);
+	
+	/**
+	 * Does not do anything
 	 * @deprecated Use {@link #execute(TArgs)}
 	 * @return null
 	 */
