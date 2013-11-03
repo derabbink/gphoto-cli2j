@@ -6,18 +6,18 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.abbink.gphoto_cli2j.command.result.Config;
+import com.abbink.gphoto_cli2j.command.result.ConfigId;
 import com.abbink.gphoto_cli2j.command.result.Port;
 
-public class ListConfig extends Parser<List<Config>> {
+public class ListConfig extends Parser<List<ConfigId>> {
 	
 	/**
 	 * matches any non-empty string
 	 */
 	public static final Pattern configNameLinePattern = Pattern.compile("^(.+)$");
 	
-	public List<Config> parse(String raw) {
-		List<Config> result = new LinkedList<Config>();
+	public List<ConfigId> parse(String raw) {
+		List<ConfigId> result = new LinkedList<ConfigId>();
 		
 		Scanner scanner = new Scanner(raw);
 		Scanner lineScanner = scanner.useDelimiter("\n");
@@ -43,9 +43,9 @@ public class ListConfig extends Parser<List<Config>> {
 	 * @return the port identified by the port's id
 	 * @throws IllegalStateException if the line could not be parsed
 	 */
-	public static Config parseConfigName(String line) {
+	public static ConfigId parseConfigName(String line) {
 		Matcher matcher = configNameLinePattern.matcher(line);
 		matcher.find();
-		return Config.fromName(matcher.group(1));
+		return ConfigId.fromName(matcher.group(1));
 	}
 }

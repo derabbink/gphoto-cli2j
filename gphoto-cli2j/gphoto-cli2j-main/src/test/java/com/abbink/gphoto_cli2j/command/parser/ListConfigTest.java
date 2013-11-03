@@ -6,7 +6,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import com.abbink.gphoto_cli2j.command.result.Config;
+import com.abbink.gphoto_cli2j.command.result.ConfigId;
 
 /**
  * Tests for {@link com.abbink.gphoto_cli2j.command.parser.ListConfig}
@@ -17,8 +17,8 @@ public class ListConfigTest {
 	@Test
 	public void parseConfigName() {
 		String line = "/main/settings/capturetarget";
-		Config expected = Config.fromName("/main/settings/capturetarget");
-		Config actual = ListConfig.parseConfigName(line);
+		ConfigId expected = ConfigId.fromName("/main/settings/capturetarget");
+		ConfigId actual = ListConfig.parseConfigName(line);
 		assertEquals(expected, actual);
 	}
 	

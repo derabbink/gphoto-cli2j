@@ -12,7 +12,7 @@ import com.abbink.gphoto_cli2j.command.arguments.CameraId;
 import com.abbink.gphoto_cli2j.command.expected.ListConfigResult;
 import com.abbink.gphoto_cli2j.command.expected.ListPortsResult;
 import com.abbink.gphoto_cli2j.command.parser.CommandToOutput;
-import com.abbink.gphoto_cli2j.command.result.Config;
+import com.abbink.gphoto_cli2j.command.result.ConfigId;
 import com.abbink.gphoto_cli2j.command.result.Port;
 import com.abbink.gphoto_cli2j.command.testimpl.CommandReplayer;
 import com.google.guiceberry.GuiceBerryModule;
@@ -57,7 +57,7 @@ public class TestCommandModule extends AbstractModule {
 	
 	private void configureExpectedResults() {
 		bind(new TypeLiteral<List<Port>>() {}).annotatedWith(ExpectedResult.class).toProvider(ListPortsResult.class);
-		bind(new TypeLiteral<List<Config>>() {}).annotatedWith(ExpectedResult.class).toProvider(ListConfigResult.class);
+		bind(new TypeLiteral<List<ConfigId>>() {}).annotatedWith(ExpectedResult.class).toProvider(ListConfigResult.class);
 	}
 	
 	@Retention(RetentionPolicy.RUNTIME)

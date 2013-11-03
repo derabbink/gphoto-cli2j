@@ -1,14 +1,14 @@
 package com.abbink.gphoto_cli2j.command.result;
 
-public class Config {
+public class ConfigId {
 	
-	public static Config fromName(String configName) {
-		return new Config(configName);
+	public static ConfigId fromName(String configName) {
+		return new ConfigId(configName);
 	}
 	
 	private String name;
 	
-	private Config(String name) {
+	private ConfigId(String name) {
 		setName(name);
 	}
 	
@@ -21,8 +21,8 @@ public class Config {
 	}
 	
 	public boolean equals(Object other) {
-		if (other instanceof Config) {
-			return name.equals(((Config) other).getName());
+		if (other instanceof ConfigId) {
+			return name.equals(((ConfigId) other).getName());
 		}
 		return false;
 	}
