@@ -1,0 +1,6 @@
+Label: Image Quality
+Type: RADIO
+Current: fine
+Choice: 0 normal
+Choice: 1 fine
+Choice: 2 superfine

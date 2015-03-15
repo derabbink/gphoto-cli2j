@@ -1,0 +1,6 @@
+Label: Image Quality
+Type: MENU
+Current: 3
+Choice: 0 2
+Choice: 1 3
+Choice: 2 5

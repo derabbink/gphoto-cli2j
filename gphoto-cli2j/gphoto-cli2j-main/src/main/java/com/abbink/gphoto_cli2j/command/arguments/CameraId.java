@@ -8,15 +8,23 @@ public class CameraId {
 	private String cameraName;
 	
 	public CameraId(String port, String cameraName) {
-		this.port = port;
-		this.cameraName = cameraName;
+		setPort(port);
+		setCameraName(cameraName);
 	}
 	
 	public String getPort() {
 		return port;
 	}
 	
+	public void setPort(String port) {
+		this.port = port;
+	}
+	
 	public String getCameraName() {
 		return cameraName;
+	}
+	
+	public void setCameraName(String cameraName) {
+		this.cameraName = cameraName;
 	}
 }

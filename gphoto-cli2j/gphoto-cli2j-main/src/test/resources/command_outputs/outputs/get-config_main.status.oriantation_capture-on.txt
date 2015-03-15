@@ -1,0 +1,3 @@
+Label: Camera Orientation
+Type: TEXT
+Current: 0'

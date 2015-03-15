@@ -1,0 +1,3 @@
+Label: DPOF Version
+Type: TEXT
+Current: 257

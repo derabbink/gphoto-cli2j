@@ -1,0 +1,8 @@
+Label: Flash Mode
+Type: RADIO
+Current: off
+Choice: 0 off
+Choice: 1 auto
+Choice: 2 on
+Choice: 3 auto + red eye suppression
+Choice: 4 on + red eye suppression

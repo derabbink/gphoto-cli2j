@@ -1,0 +1,3 @@
+Label: Size Quality Mode
+Type: MENU
+Current: (null)

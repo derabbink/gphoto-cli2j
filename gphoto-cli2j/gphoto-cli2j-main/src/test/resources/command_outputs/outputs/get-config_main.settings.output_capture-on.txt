@@ -1,0 +1,6 @@
+Label: Camera Output
+Type: RADIO
+Current: Off
+Choice: 0 LCD
+Choice: 1 Video OUT
+Choice: 2 Off

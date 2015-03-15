@@ -1,0 +1,3 @@
+Label: Focal Length Denominator
+Type: TEXT
+Current: 32

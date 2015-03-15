@@ -1,0 +1,5 @@
+Label: Capture Target
+Type: RADIO
+Current: Internal RAM
+Choice: 0 Internal RAM
+Choice: 1 Memory card

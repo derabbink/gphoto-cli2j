@@ -1,0 +1,3 @@
+Label: Supported Thumb Size
+Type: MENU
+Current: (null)

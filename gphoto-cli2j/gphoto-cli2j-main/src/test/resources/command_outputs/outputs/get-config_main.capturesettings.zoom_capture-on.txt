@@ -1,0 +1,6 @@
+Label: Zoom
+Type: RANGE
+Current: 0
+Bottom: 0
+Top: 12
+Step: 1

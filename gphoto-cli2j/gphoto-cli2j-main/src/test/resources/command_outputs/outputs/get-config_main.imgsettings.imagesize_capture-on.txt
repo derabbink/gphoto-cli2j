@@ -1,0 +1,7 @@
+Label: Image Size
+Type: RADIO
+Current: Large
+Choice: 0 Large
+Choice: 1 Medium 1
+Choice: 2 Medium 2
+Choice: 3 Small

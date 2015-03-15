@@ -1,0 +1,4 @@
+Label: Full View File Format
+Type: MENU
+Current: 1
+Choice: 0 1

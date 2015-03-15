@@ -1,0 +1,6 @@
+Label: Metering Mode
+Type: MENU
+Current: 3
+Choice: 0 0
+Choice: 1 1
+Choice: 2 3

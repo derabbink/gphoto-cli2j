@@ -1,0 +1,4 @@
+Label: Color Gain
+Type: MENU
+Current: 0
+Choice: 0 0

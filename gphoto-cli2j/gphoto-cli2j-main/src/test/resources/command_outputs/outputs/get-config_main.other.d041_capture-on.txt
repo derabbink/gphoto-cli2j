@@ -1,0 +1,5 @@
+Label: Assist Light
+Type: MENU
+Current: 1
+Choice: 0 1
+Choice: 1 0

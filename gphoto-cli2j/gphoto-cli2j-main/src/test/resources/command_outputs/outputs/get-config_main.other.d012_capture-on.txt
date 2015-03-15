@@ -1,0 +1,5 @@
+Label: Focusing Point
+Type: MENU
+Current: 12289
+Choice: 0 12291
+Choice: 1 12289

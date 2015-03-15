@@ -1,0 +1,3 @@
+Label: Shutter Speed
+Type: MENU
+Current: 112

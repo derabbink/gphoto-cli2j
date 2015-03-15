@@ -1,0 +1,5 @@
+Label: Assist Light
+Type: RADIO
+Current: Off
+Choice: 0 Off
+Choice: 1 On

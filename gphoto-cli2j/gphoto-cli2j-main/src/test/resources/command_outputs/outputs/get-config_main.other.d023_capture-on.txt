@@ -1,0 +1,3 @@
+Label: Av Open
+Type: TEXT
+Current: 32767

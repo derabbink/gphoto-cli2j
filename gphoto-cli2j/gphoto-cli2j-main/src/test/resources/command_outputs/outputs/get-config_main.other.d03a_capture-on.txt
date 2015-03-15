@@ -1,0 +1,3 @@
+Label: Ml Spot Position
+Type: TEXT
+Current: 0

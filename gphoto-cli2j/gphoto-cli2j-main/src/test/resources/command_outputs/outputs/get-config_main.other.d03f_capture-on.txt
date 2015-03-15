@@ -1,0 +1,3 @@
+Label: EZoom Size of Tele
+Type: TEXT
+Current: 640

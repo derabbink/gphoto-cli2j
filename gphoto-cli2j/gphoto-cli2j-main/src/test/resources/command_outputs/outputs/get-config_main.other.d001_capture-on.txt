@@ -1,0 +1,5 @@
+Label: Beep Mode
+Type: MENU
+Current: 1
+Choice: 0 0
+Choice: 1 1

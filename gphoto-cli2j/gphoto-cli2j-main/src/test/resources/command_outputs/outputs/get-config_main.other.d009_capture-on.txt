@@ -1,0 +1,3 @@
+Label: Self Time
+Type: TEXT
+Current: 100

@@ -1,0 +1,3 @@
+Label: Synchronize camera date and time with PC
+Type: TOGGLE
+Current: 0

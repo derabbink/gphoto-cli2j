@@ -1,4 +1,6 @@
 #use one line per command. use tab to separate command and output file
+# the hash (#) character is used in commands to distinguish identical commands with different outputs under different circumstances
+# actually it begins a bash comment, thus commands including a "#foo" are valid 
 #command	output file
 
 # --auto-detect
@@ -7,32 +9,127 @@ gphoto2 --auto-detect	outputs/auto-detect.txt
 # --list-ports
 gphoto2 --list-ports	outputs/list-ports.txt
 
-# --list-config
-gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --list-config	outputs/list-config.txt
+# --abilities
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --abilities	outputs/abilities.txt
 
-# --get-config
-gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/actions/focuslock	outputs/get-config_main.actions.focuslock.txt
-gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/actions/syncdatetime	outputs/get-config_main.actions.syncdatetime.txt
-gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/settings/ownername	outputs/get-config_main.settings.ownername.txt
-gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/settings/capturetarget	outputs/get-config_main.settings.capturetarget.txt
-gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/settings/capture	outputs/get-config_main.settings.capture.txt
-gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/status/model	outputs/get-config_main.status.model.txt
-gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/status/firmwareversion	outputs/get-config_main.status.firmwareversion.txt
-gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d001	outputs/get-config_main.other.d001.txt
-gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d002	outputs/get-config_main.other.d002.txt
-gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d003	outputs/get-config_main.other.d003.txt
-gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d02c	outputs/get-config_main.other.d02c.txt
-gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d02d	outputs/get-config_main.other.d02d.txt
-gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d02e	outputs/get-config_main.other.d02e.txt
-gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d02f	outputs/get-config_main.other.d02f.txt
-gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d030	outputs/get-config_main.other.d030.txt
-gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d031	outputs/get-config_main.other.d031.txt
-gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d032	outputs/get-config_main.other.d032.txt
-gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d033	outputs/get-config_main.other.d033.txt
-gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d034	outputs/get-config_main.other.d034.txt
-gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d045	outputs/get-config_main.other.d045.txt
-gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d046	outputs/get-config_main.other.d046.txt
-gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d047	outputs/get-config_main.other.d047.txt
-gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d048	outputs/get-config_main.other.d048.txt
-gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d049	outputs/get-config_main.other.d049.txt
-gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d04b	outputs/get-config_main.other.d04b.txt
+# --list-config
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --list-config #config /main/settings/capture=0	outputs/list-config_capture-off.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --list-config #config /main/settings/capture=1	outputs/list-config_capture-on.txt
+
+# --get-config (with config /main/settings/capture=0)
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/actions/focuslock #config /main/settings/capture=0	outputs/get-config_main.actions.focuslock_capture-off.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/actions/syncdatetime #config /main/settings/capture=0	outputs/get-config_main.actions.syncdatetime_capture-off.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/settings/ownername #config /main/settings/capture=0	outputs/get-config_main.settings.ownername_capture-off.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/settings/capturetarget #config /main/settings/capture=0	outputs/get-config_main.settings.capturetarget_capture-off.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/settings/capture #config /main/settings/capture=0	outputs/get-config_main.settings.capture_capture-off.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/status/model #config /main/settings/capture=0	outputs/get-config_main.status.model_capture-off.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/status/firmwareversion #config /main/settings/capture=0	outputs/get-config_main.status.firmwareversion_capture-off.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d001 #config /main/settings/capture=0	outputs/get-config_main.other.d001_capture-off.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d002 #config /main/settings/capture=0	outputs/get-config_main.other.d002_capture-off.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d003 #config /main/settings/capture=0	outputs/get-config_main.other.d003_capture-off.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d02c #config /main/settings/capture=0	outputs/get-config_main.other.d02c_capture-off.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d02d #config /main/settings/capture=0	outputs/get-config_main.other.d02d_capture-off.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d02e #config /main/settings/capture=0	outputs/get-config_main.other.d02e_capture-off.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d02f #config /main/settings/capture=0	outputs/get-config_main.other.d02f_capture-off.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d030 #config /main/settings/capture=0	outputs/get-config_main.other.d030_capture-off.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d031 #config /main/settings/capture=0	outputs/get-config_main.other.d031_capture-off.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d032 #config /main/settings/capture=0	outputs/get-config_main.other.d032_capture-off.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d033 #config /main/settings/capture=0	outputs/get-config_main.other.d033_capture-off.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d034 #config /main/settings/capture=0	outputs/get-config_main.other.d034_capture-off.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d045 #config /main/settings/capture=0	outputs/get-config_main.other.d045_capture-off.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d046 #config /main/settings/capture=0	outputs/get-config_main.other.d046_capture-off.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d047 #config /main/settings/capture=0	outputs/get-config_main.other.d047_capture-off.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d048 #config /main/settings/capture=0	outputs/get-config_main.other.d048_capture-off.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d049 #config /main/settings/capture=0	outputs/get-config_main.other.d049_capture-off.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d04b #config /main/settings/capture=0	outputs/get-config_main.other.d04b_capture-off.txt
+
+# --get-config (with config /main/settings/capture=1)
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/actions/focuslock #config /main/settings/capture=1	output/get-config_main.actions.focuslock_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/actions/syncdatetime #config /main/settings/capture=1	output/get-config_main.actions.syncdatetime_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/settings/output #config /main/settings/capture=1	output/get-config_main.settings.output_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/settings/ownername #config /main/settings/capture=1	output/get-config_main.settings.ownername_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/settings/capturetarget #config /main/settings/capture=1	output/get-config_main.settings.capturetarget_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/settings/capture #config /main/settings/capture=1	output/get-config_main.settings.capture_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/status/model #config /main/settings/capture=1	output/get-config_main.status.model_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/status/firmwareversion #config /main/settings/capture=1	output/get-config_main.status.firmwareversion_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/status/orientation #config /main/settings/capture=1	output/get-config_main.status.oriantation_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/imgsettings/imagequality #config /main/settings/capture=1	output/get-config_main.imgsettings.imagequality_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/imgsettings/imageformat #config /main/settings/capture=1	output/get-config_main.imgsettings.imageformat_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/imgsettings/imagesize #config /main/settings/capture=1	output/get-config_main.imgsettings.imagesize_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/imgsettings/iso #config /main/settings/capture=1	output/get-config_main.imgsettings.iso_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/imgsettings/whitebalance #config /main/settings/capture=1	output/get-config_main.imgsettings.whitebalance_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/imgsettings/photoeffect #config /main/settings/capture=1	output/get-config_main.imgsettings.photoeffect_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/capturesettings/zoom #config /main/settings/capture=1	output/get-config_main.capturesettings.zoom_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/capturesettings/assistlight #config /main/settings/capture=1	output/get-config_main.capturesettings.assistlight_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/capturesettings/autorotation #config /main/settings/capture=1	output/get-config_main.capturesettings.autorotation_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/capturesettings/exposurecompensation #config /main/settings/capture=1	output/get-config_main.capturesettings.exposurecompensation_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/capturesettings/flashmode #config /main/settings/capture=1	output/get-config_main.capturesettings.flashmode_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/capturesettings/shootingmode #config /main/settings/capture=1	output/get-config_main.capturesettingsshootingmode_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/capturesettings/aperture #config /main/settings/capture=1	output/get-config_main.capturesettings.aperture_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/capturesettings/focusingpoint #config /main/settings/capture=1	output/get-config_main.capturesettings.focusingpoint_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/capturesettings/shutterspeed #config /main/settings/capture=1	output/get-config_main.capturesettings.shutterspeed_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/capturesettings/meteringmode #config /main/settings/capture=1	output/get-config_main.capturesettings.meteringmode_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/capturesettings/afdistance #config /main/settings/capture=1	output/get-config_main.capturesettings.afdistance_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d001 #config /main/settings/capture=1	output/get-config_main.other.d001_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d002 #config /main/settings/capture=1	output/get-config_main.other.d002_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d003 #config /main/settings/capture=1	output/get-config_main.other.d003_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d005 #config /main/settings/capture=1	output/get-config_main.other.d005_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d006 #config /main/settings/capture=1	output/get-config_main.other.d006_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d007 #config /main/settings/capture=1	output/get-config_main.other.d007_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d008 #config /main/settings/capture=1	output/get-config_main.other.d008_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d009 #config /main/settings/capture=1	output/get-config_main.other.d009_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d00a #config /main/settings/capture=1	output/get-config_main.other.d00a_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d00b #config /main/settings/capture=1	output/get-config_main.other.d00b_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d00c #config /main/settings/capture=1	output/get-config_main.other.d00c_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d00e #config /main/settings/capture=1	output/get-config_main.other.d00e_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d00f #config /main/settings/capture=1	output/get-config_main.other.d00f_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d010 #config /main/settings/capture=1	output/get-config_main.other.d010_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d011 #config /main/settings/capture=1	output/get-config_main.other.d011_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d012 #config /main/settings/capture=1	output/get-config_main.other.d012_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d013 #config /main/settings/capture=1	output/get-config_main.other.d013_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d015 #config /main/settings/capture=1	output/get-config_main.other.d015_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d017 #config /main/settings/capture=1	output/get-config_main.other.d017_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d018 #config /main/settings/capture=1	output/get-config_main.other.d018_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d019 #config /main/settings/capture=1	output/get-config_main.other.d019_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d01c #config /main/settings/capture=1	output/get-config_main.other.d01c_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d01d #config /main/settings/capture=1	output/get-config_main.other.d01d_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d01e #config /main/settings/capture=1	output/get-config_main.other.d01e_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d01f #config /main/settings/capture=1	output/get-config_main.other.d01f_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d023 #config /main/settings/capture=1	output/get-config_main.other.d023_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d024 #config /main/settings/capture=1	output/get-config_main.other.d024_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d025 #config /main/settings/capture=1	output/get-config_main.other.d025_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d026 #config /main/settings/capture=1	output/get-config_main.other.d026_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d027 #config /main/settings/capture=1	output/get-config_main.other.d027_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d028 #config /main/settings/capture=1	output/get-config_main.other.d028_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d029 #config /main/settings/capture=1	output/get-config_main.other.d029_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d02a #config /main/settings/capture=1	output/get-config_main.other.d02a_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d02c #config /main/settings/capture=1	output/get-config_main.other.d02c_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d02d #config /main/settings/capture=1	output/get-config_main.other.d02d_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d02e #config /main/settings/capture=1	output/get-config_main.other.d02e_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d02f #config /main/settings/capture=1	output/get-config_main.other.d02f_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d030 #config /main/settings/capture=1	output/get-config_main.other.d030_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d031 #config /main/settings/capture=1	output/get-config_main.other.d031_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d032 #config /main/settings/capture=1	output/get-config_main.other.d032_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d033 #config /main/settings/capture=1	output/get-config_main.other.d033_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d034 #config /main/settings/capture=1	output/get-config_main.other.d034_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d036 #config /main/settings/capture=1	output/get-config_main.other.d036_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d037 #config /main/settings/capture=1	output/get-config_main.other.d037_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d038 #config /main/settings/capture=1	output/get-config_main.other.d038_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d039 #config /main/settings/capture=1	output/get-config_main.other.d039_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d03a #config /main/settings/capture=1	output/get-config_main.other.d03a_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d03b #config /main/settings/capture=1	output/get-config_main.other.d03b_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d03c #config /main/settings/capture=1	output/get-config_main.other.d03c_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d03d #config /main/settings/capture=1	output/get-config_main.other.d03d_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d03e #config /main/settings/capture=1	output/get-config_main.other.d03e_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d03f #config /main/settings/capture=1	output/get-config_main.other.d03f_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d040 #config /main/settings/capture=1	output/get-config_main.other.d040_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d041 #config /main/settings/capture=1	output/get-config_main.other.d041_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d042 #config /main/settings/capture=1	output/get-config_main.other.d042_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d043 #config /main/settings/capture=1	output/get-config_main.other.d043_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d044 #config /main/settings/capture=1	output/get-config_main.other.d044_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d045 #config /main/settings/capture=1	output/get-config_main.other.d045_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d046 #config /main/settings/capture=1	output/get-config_main.other.d046_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d047 #config /main/settings/capture=1	output/get-config_main.other.d047_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d048 #config /main/settings/capture=1	output/get-config_main.other.d048_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d049 #config /main/settings/capture=1	output/get-config_main.other.d049_capture-on.txt
+gphoto2 --port="usb:001,004" --camera="Canon PowerShot A520 (PTP mode)" --get-config /main/other/d04b #config /main/settings/capture=1	output/get-config_main.other.d04b_capture-on.txt

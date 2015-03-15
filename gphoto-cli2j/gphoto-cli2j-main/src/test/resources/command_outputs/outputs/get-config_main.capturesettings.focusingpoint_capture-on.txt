@@ -1,0 +1,5 @@
+Label: Focusing Point
+Type: RADIO
+Current: Multiple Focusing Points, Auto
+Choice: 0 Multiple Focusing Points (Center)
+Choice: 1 Multiple Focusing Points, Auto

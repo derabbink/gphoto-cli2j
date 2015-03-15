@@ -1,0 +1,3 @@
+Label: Av Open Apex
+Type: TEXT
+Current: 26

@@ -1,0 +1,9 @@
+Label: Battery Type
+Type: MENU
+Current: 2
+Choice: 0 0
+Choice: 1 1
+Choice: 2 2
+Choice: 3 3
+Choice: 4 4
+Choice: 5 5

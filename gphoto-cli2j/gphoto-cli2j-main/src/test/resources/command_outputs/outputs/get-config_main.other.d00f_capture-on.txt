@@ -1,0 +1,3 @@
+Label: Zoom
+Type: TEXT
+Current: 0

@@ -1,0 +1,3 @@
+Label: Digital Zoom Magnification
+Type: TEXT
+Current: 2272

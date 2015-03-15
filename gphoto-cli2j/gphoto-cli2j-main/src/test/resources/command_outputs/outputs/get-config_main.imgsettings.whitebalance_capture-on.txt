@@ -1,0 +1,10 @@
+Label: WhiteBalance
+Type: RADIO
+Current: Auto
+Choice: 0 Auto
+Choice: 1 Daylight
+Choice: 2 Cloudy
+Choice: 3 Tungsten
+Choice: 4 Fluorescent
+Choice: 5 Fluorescent H
+Choice: 6 Custom

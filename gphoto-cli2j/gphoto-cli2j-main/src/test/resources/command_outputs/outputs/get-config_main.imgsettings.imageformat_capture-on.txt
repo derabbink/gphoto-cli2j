@@ -1,0 +1,4 @@
+Label: Image Format
+Type: RADIO
+Current: JPEG
+Choice: 0 JPEG

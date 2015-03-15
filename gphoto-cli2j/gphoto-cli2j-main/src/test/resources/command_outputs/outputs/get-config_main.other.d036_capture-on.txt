@@ -1,0 +1,6 @@
+Label: Camera Output
+Type: MENU
+Current: 3
+Choice: 0 1
+Choice: 1 2
+Choice: 2 3

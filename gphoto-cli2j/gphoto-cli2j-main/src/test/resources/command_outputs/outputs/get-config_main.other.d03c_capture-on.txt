@@ -1,0 +1,3 @@
+Label: Av Max Apex
+Type: TEXT
+Current: 56

@@ -1,0 +1,7 @@
+Label: Image Size
+Type: MENU
+Current: 0
+Choice: 0 0
+Choice: 1 1
+Choice: 2 3
+Choice: 3 2

@@ -1,0 +1,6 @@
+Label: Metering Mode
+Type: RADIO
+Current: Evaluative
+Choice: 0 Center-weighted
+Choice: 1 Spot
+Choice: 2 Evaluative

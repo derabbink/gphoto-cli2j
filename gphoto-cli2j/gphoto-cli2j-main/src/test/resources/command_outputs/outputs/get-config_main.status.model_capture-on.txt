@@ -1,0 +1,3 @@
+Label: Camera Model
+Type: TEXT
+Current: Canon PowerShot A520

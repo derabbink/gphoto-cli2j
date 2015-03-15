@@ -1,0 +1,16 @@
+Label: Exposure Compensation
+Type: MENU
+Current: 24
+Choice: 0 8
+Choice: 1 11
+Choice: 2 13
+Choice: 3 16
+Choice: 4 19
+Choice: 5 21
+Choice: 6 24
+Choice: 7 27
+Choice: 8 29
+Choice: 9 32
+Choice: 10 35
+Choice: 11 37
+Choice: 12 40

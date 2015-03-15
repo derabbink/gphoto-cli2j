@@ -7,7 +7,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.abbink.gphoto_cli2j.command.result.ConfigId;
-import com.abbink.gphoto_cli2j.command.result.Port;
 
 public class ListConfig extends Parser<List<ConfigId>> {
 	

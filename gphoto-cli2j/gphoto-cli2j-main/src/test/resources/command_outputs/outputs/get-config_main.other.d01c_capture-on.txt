@@ -1,0 +1,8 @@
+Label: ISO Speed
+Type: MENU
+Current: 64
+Choice: 0 64
+Choice: 1 72
+Choice: 2 80
+Choice: 3 88
+Choice: 4 0

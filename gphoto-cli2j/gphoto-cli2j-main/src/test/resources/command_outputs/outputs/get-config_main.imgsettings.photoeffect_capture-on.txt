@@ -1,0 +1,9 @@
+Label: Photo Effect
+Type: RADIO
+Current: Off
+Choice: 0 Off
+Choice: 1 Vivid
+Choice: 2 Neutral
+Choice: 3 Low sharpening
+Choice: 4 Sepia
+Choice: 5 Black & white

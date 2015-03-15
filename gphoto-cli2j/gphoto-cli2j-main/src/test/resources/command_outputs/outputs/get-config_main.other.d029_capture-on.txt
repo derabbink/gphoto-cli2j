@@ -1,0 +1,18 @@
+Label: Capture Transfer Mode
+Type: MENU
+Current: 3
+Choice: 0 1
+Choice: 1 2
+Choice: 2 3
+Choice: 3 4
+Choice: 4 5
+Choice: 5 6
+Choice: 6 7
+Choice: 7 8
+Choice: 8 9
+Choice: 9 10
+Choice: 10 11
+Choice: 11 12
+Choice: 12 13
+Choice: 13 14
+Choice: 14 15

@@ -1,0 +1,3 @@
+Label: AF Mode
+Type: TEXT
+Current: 0

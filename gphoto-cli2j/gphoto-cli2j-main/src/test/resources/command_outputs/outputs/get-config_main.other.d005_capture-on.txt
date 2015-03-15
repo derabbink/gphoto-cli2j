@@ -1,0 +1,3 @@
+Label: Camera Mode
+Type: TEXT
+Current: 32

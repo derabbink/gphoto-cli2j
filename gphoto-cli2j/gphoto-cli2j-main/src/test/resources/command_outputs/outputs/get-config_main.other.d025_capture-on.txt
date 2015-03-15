@@ -1,0 +1,3 @@
+Label: Focal Length
+Type: TEXT
+Current: 186

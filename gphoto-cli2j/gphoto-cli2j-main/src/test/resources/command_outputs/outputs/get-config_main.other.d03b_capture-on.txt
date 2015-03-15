@@ -1,0 +1,3 @@
+Label: Disp Av Max
+Type: TEXT
+Current: 0

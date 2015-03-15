@@ -1,0 +1,5 @@
+Label: Rotation Flag
+Type: RADIO
+Current: On
+Choice: 0 On
+Choice: 1 Off

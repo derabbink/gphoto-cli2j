@@ -1,0 +1,3 @@
+Label: EZoom Start Position
+Type: TEXT
+Current: 8
